@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors())
 
 // Initial students array
 let students = [
@@ -11,6 +13,7 @@ let students = [
 
 // Track next unique ID (since Alice has ID 1)
 let nextId = 2;
+
 
 // GET all students
 app.get('/students', (req, res) => {
